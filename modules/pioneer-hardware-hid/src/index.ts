@@ -128,9 +128,7 @@ let createHidWallet = async function (attempts:any = 0) {
         let devices = await hidAdapter.delegate.getDevices()
         log.info(tag,"devices: ",devices)
 
-        log.info(tag,"hidAdapter: ",hidAdapter)
-        let devices = await hidAdapter.getDevices
-        // KEEPKEY_WALLET = await hidAdapter.pairDevice(devices[0].serialNumber)
+        KEEPKEY_WALLET = await hidAdapter.pairDevice(devices[0].serialNumber)
 
         if (!KEEPKEY_WALLET) throw 'No wallet in the keyring'
         return KEEPKEY_WALLET
